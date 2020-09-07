@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// TO DO ADD ROUTES
+// ROUTES
 app.use("/api/v1/home/", countyRouter); // county covid states
 app.use("/api/v1/home/state/geodata", stateGeoRouter); // State map coordinates
 app.use("/api/v1/home/us/county/geodata", usGeoRouter); // State county geo data

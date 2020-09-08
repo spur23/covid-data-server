@@ -5,7 +5,6 @@ exports.getUSGeo = async (req, res, next) => {
   try {
     const { state } = req.params;
     const stateModified = capitalize(state);
-    console.log(stateModified);
     const filter = {
       "properties.STATE": { $eq: stateModified },
     };

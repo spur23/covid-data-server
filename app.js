@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-
+const compression = require("compression");
 const countyRouter = require("./routes/countyRoute");
 const stateGeoRouter = require("./routes/stateGeoRoute");
 const usGeoRouter = require("./routes/usGeoRoute");
@@ -26,6 +26,8 @@ app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   next();
 });
+
+app.use(compression());
 
 // ROUTES
 app.use("/api/v1/home/", countyRouter); // county covid states
